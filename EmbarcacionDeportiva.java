@@ -28,8 +28,10 @@ public class EmbarcacionDeportiva extends Barco
     /**
      * Imprime los datos por pantalla del VELERO
      */
-    public String toString(){
-        return "Matricula: "+ getMatricula() + "\nEslora: "+ getEslora() +"\nAño Fabricación: "
-                + getAnoFabricacion() + "\nPotencia: "+ potencia;
+     public String toString()
+    {
+        String data = super.toString();
+        data += "Potencia: " + potencia + "\n";
+        return data;
     }
 }

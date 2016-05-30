@@ -29,7 +29,8 @@ public class Velero extends Barco
      * Imprime los datos por pantalla del Velero
      */
     public String toString(){
-        return "Matricula: "+ getMatricula() + "\nEslora: "+ getEslora() +"\nAño Fabricación: "
-                + getAnoFabricacion() + "\nNumero de mastiles: "+ numeroMastiles;
+        String data = super.toString();
+        data += "Número de mástiles: " + numeroMastiles + "\n";
+        return data;
     }
 }

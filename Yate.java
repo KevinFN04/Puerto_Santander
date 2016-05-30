@@ -29,6 +29,8 @@ public class Yate extends EmbarcacionDeportiva
      * Devuelve los datos del Yate
      */
     public String toString(){
-        return "Matricula: " + getMatricula() + "\nEslora: " + getEslora() + "\nAño Fabricación: " + getAnoFabricacion() + "\nPotencia: "+ super.getCoeficienteBernua() + "\nCamarotes: "+ camarotes;
+        String data = super.toString();
+        data += "Camarotes: " + camarotes + "\n";
+        return data;
     }
 }

@@ -54,5 +54,11 @@ public abstract class Barco
     /**
      * Devuelve todos los datos del barco.
      */
-    public abstract String toString();
+    @Override
+    public String toString(){
+        String datos = "Matricula: " + matricula + "\n";
+        datos += "Eslora: " + eslora + "\n";
+        datos += "Año de fabricación: " + anoFabricacion + "\n";
+        return datos;
+    }
 }

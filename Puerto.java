@@ -21,37 +21,45 @@ public class Puerto
      */
     public int addAlquiler(int numeroDias, Cliente cliente, Barco barco){
         int count = 0;
-        int pos = -1;
-        while(count < NUMERO_AMARRES && pos == -1){
+        int pos = 0;
+        boolean amarreAlquilado = false;
+        while(count < NUMERO_AMARRES && !amarreAlquilado){
             if(alquileres[count]== null){
                 pos = count;
                 alquileres[count] = new Alquiler(numeroDias, cliente, barco);
+                amarreAlquilado = true;
             }
             count++;
         }
         return pos;
     }
-    
+
     /**
      * Metodo imprime los amarres que estan alquilados y los que aun estan vacios
      */
     public void verEstadoAmarres(){
         for(int count = 0; count < NUMERO_AMARRES;count++){
             if(alquileres[count] == null)
-                System.out.println("Amarre " + (count+1) + " esta vacio");
+                System.out.println("Amarre " + (count) + " esta vacio");
             else{
-                System.out.println("Amarre " + (count+1) 
-                + " esta ocupado, el valor de su alquiler en este momento es = " + alquileres[count].getCosteAlquiler());
+                System.out.println("Amarre " + (count) 
+                    + " esta ocupado, el valor de su alquiler en este momento es = " + alquileres[count].getCosteAlquiler());
             }
         }
     }
-    
+
     /**
      * Metodo que liquida un alquiler y devuelve su coste
      */
-    public float liquidarAlquiler(int posicion){
-        float liquid = alquileres[posicion].getCosteAlquiler();
-        alquileres[posicion] = null;
-        return liquid;
+    public float liquidarAlquiler(int posicion)
+    {
+        float valor = -1;
+        if(posicion < NUMERO_AMARRES && posicion >= 0){
+            if(alquileres[posicion] != null){
+                valor = alquileres[posicion].getCosteAlquiler();
+                alquileres[posicion] = null;
+            }
+        }
+        return valor;
     }
 }

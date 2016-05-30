@@ -34,7 +34,8 @@ public class Alquiler
     /**
      * Devuelve los datos del VELERO
      */
+    @Override
     public String toString(){
-        return "Numero de dias: " + numeroDias + "\nCliente: " + cliente.toString() + "\nBarco: " + barco.toString();
+        return "Numero de dias: " + numeroDias + "\nCliente: " + cliente + "\nBarco: " + barco;
     }
 }
