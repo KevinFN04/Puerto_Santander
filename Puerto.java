@@ -21,13 +21,11 @@ public class Puerto
      */
     public int addAlquiler(int numeroDias, Cliente cliente, Barco barco){
         int count = 0;
-        int pos = 0;
-        boolean amarreAlquilado = false;
-        while(count < NUMERO_AMARRES && !amarreAlquilado){
+        int pos = -1;
+        while(count < NUMERO_AMARRES && pos == -1){
             if(alquileres[count]== null){
                 pos = count;
                 alquileres[count] = new Alquiler(numeroDias, cliente, barco);
-                amarreAlquilado = true;
             }
             count++;
         }
