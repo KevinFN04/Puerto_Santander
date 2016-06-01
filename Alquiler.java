@@ -12,15 +12,17 @@ public class Alquiler
     private Barco barco;
     private static int VALOR_FIJO_ALQUILER = 300;
     private static int MULTIPLICADOR_ESLORA = 10;
+    private int amarre;
 
     /**
      * Constructor for objects of class Alquiler
      */
-    public Alquiler(int dias, Cliente cliente, Barco barco)
+    public Alquiler(int dias, Cliente cliente, Barco barco, int amarre)
     {
         numeroDias = dias;
         this.cliente = cliente;
         this.barco = barco;
+        this.amarre = amarre;
     }
 
     /**
@@ -34,8 +36,15 @@ public class Alquiler
     /**
      * Devuelve los datos del VELERO
      */
-    @Override
     public String toString(){
-        return "Numero de dias: " + numeroDias + "\nCliente: " + cliente + "\nBarco: " + barco;
+        return "Numero de dias: " + numeroDias + "\nCliente: " + cliente.toString() + "\nBarco: " + barco.toString();
+    }
+    
+     /**
+     * Devuelve el amarre asignado al alquiler.
+     */
+    public int getAmarre()
+    {
+        return amarre;
     }
 }
