@@ -59,8 +59,7 @@ public class Puerto
                 if (cont < alquileres.size() && alquileres.get(cont).getAmarre() == count){
                     System.out.println("Amarre " + (count) 
                         + " esta ocupado, el valor de su alquiler en este momento es = " 
-                        + alquileres.get(cont).getCosteAlquiler());
-                        
+                        + alquileres.get(cont).getCosteAlquiler());                        
                     count++;
                     cont++;
                 }
@@ -83,12 +82,13 @@ public class Puerto
     public float liquidarAlquiler(int posicion){       
         int count = 0;
         boolean encontrado = false;
-        float liquid = 0;
+        float liquid = -1;
         while(count < alquileres.size() && !encontrado){
             Alquiler compAlquiler = alquileres.get(count);
             if (compAlquiler.getAmarre() == posicion){
                 liquid = compAlquiler.getCosteAlquiler();
                 alquileres.remove(count);
+                encontrado = true;
             }
             count++;
         }
